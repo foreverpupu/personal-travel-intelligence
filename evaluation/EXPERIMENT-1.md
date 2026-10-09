@@ -1,0 +1,13 @@
+# Experiment 1: test protocol (draft, not yet executed)
+
+1. Select an **unseen** trip record. The included `examples/SYNTHETIC-TRIP.md` is only a rehearsal; it is deliberately public and must not be used as an unseen confirmatory result. Ask a volunteer for one completed travel incident and permission to evaluate it, remove sensitive details and freeze the facts.
+2. Freeze a **shared fact sheet** (past tense events, planned but not done, unknowns, constraints) and a list of **forbidden unsupported statements**. Give both arms exactly the same factual packet.
+3. Baseline prompt: “Using ONLY the supplied travel facts, write a short readable Chinese travel-guide section for friends. Distinguish planned from actual events, label unknown details, do not invent causality, retain useful navigable bilingual place names if supplied. Produce A4 DOCX and searchable A4 PDF when tools are available; keep internal source filenames and verification commentary out of the friends-edition document. Verify actual page size, Chinese and English extraction, and clipping. Report what was and was not verified.”
+4. PTI arm prompt: “Using the same fact sheet, write a short Chinese friends-edition travel-guide section using the installed Personal Travel Intelligence Skill. Produce A4 DOCX and searchable A4 PDF when tools are available; keep internal source filenames and verification commentary out of the friends-edition document. Report what was and was not verified.”
+5. Use the same model/version, temperature where available, file tools, QA capabilities, time/token budget and operator. Collect >=3 independent runs per arm, retain failures and allow identical realistic revision opportunities.
+6. Blind-label outputs X/Y in randomized order. Give evaluators the facts and forbidden-statements list; have someone other than the generation operator score factual accuracy and edit effort. Keep an unblinding key private until ratings are recorded.
+7. Report counts, raw observations, tool differences and sample sizes; **do not** write “PTI improves quality X%” from five ratings.
+
+## Rehearsal-only synthetic fact sheet
+
+Use `../examples/SYNTHETIC-TRIP.md`. Forbidden unsupported statements: “the travelers entered the lighthouse”; “closure caused by weather”; “hotel booking was canceled or refundable”; “café name/price/meal is known”; “visited second beach”; “specific closure schedule is verified”. The fact sheet supplied to both arms explicitly states which claims are unknown or unsupported. The evaluator also uses this forbidden-claims checklist independently; do not supply extra facts or special prohibitions to one arm only.

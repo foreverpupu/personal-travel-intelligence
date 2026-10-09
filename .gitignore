@@ -1,0 +1,10 @@
+# Keep private trip records in a workspace, not in this public repository.
+/travel-data/
+!travel-workspace-template/
+!travel-workspace-template/**
+*.pdf
+*.docx
+*.zip
+.env
+.DS_Store
+__pycache__/
