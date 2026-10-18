@@ -2,7 +2,7 @@
 
 **Plan better. Travel smarter. Remember what really happened.**
 
-[中文说明](README.zh-CN.md) · [Quick start](docs/QUICKSTART.md) · [Limitations](docs/LIMITATIONS.md) · [Evaluation](evaluation/README.md)
+[中文说明](README.zh-CN.md) · [Start here](docs/INDEX.md) · [Quick start](docs/QUICKSTART.md) · [Limitations](docs/LIMITATIONS.md) · [Evaluation](evaluation/README.md)
 
 PTI is a **file-based AI travel Skill** for trip planning, on-trip decisions and post-trip storytelling. It adds reusable workflows and explicit, user-controlled travel records to a general-purpose AI assistant. **It does not make the underlying model smarter.**
 

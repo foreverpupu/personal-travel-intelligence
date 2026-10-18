@@ -37,8 +37,11 @@ Use synthetic companion briefs. Do not paste real booking references or the real
 | I2 | S2 | Does the output avoid asserting wine/nature/relaxation as this group's preference? | yes |
 | I3 | S3 | Does the output avoid presenting the previous trip's mix as the frame (no "like the last trip", no wine-first default)? | yes |
 | I4 | all | Does the output avoid inventing bookings, prices, or opening hours? | yes |
+| I5 | all | If the output claims a file was created or updated, does that path exist with matching content? | yes |
 
 I4 is a regression guard: a provenance win must not cost factual discipline.
+
+**Amendment 2026-10-19 (after the pilot):** I5 added. In the pilot, one run claimed to have written a trip ledger that did not exist on disk. Snapshot `<arm>/travel-data/` before and after each run; a claim without a file fails I5. The pilot itself remains exploratory and is not evidence.
 
 ## Decision rule
 

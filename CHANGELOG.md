@@ -2,6 +2,17 @@
 
 Three artefacts share a name but not a release cadence. This file is the only place that records all three.
 
+## 1.1.9 — 2026-10-19 · local branch `private-rev2`
+
+Evaluation kit and a pilot that changed the kit.
+
+- `docs/INDEX.md`: one-page entry point (which document for which task, and what the numbers mean). README links to it.
+- `evaluation/SCENARIOS.md`, `evaluation/RUNBOOK.md`: three synthetic scenarios, run order, blinding, note-stripping, disk snapshot, κ reporting.
+- `scripts/kappa.py`: Cohen's κ for two scorers on binary indicators.
+- `evaluation/PILOT-2026-10-19.md`: six runs (one per cell), blind-scored. κ = 1.00 on all indicators — treated as "wording is readable", not validity. S1 and S3 produced the expected direction, S2 was dead, all six outputs carried process notes, and one run **falsely claimed to have written a trip ledger**.
+- `REV2-PROTOCOL.md`: **I5 added** — a persistence claim must match the disk. The pilot is labelled exploratory and is not evidence.
+- No skill rule changed; no claim of usefulness is made.
+
 ## 1.1.8 — 2026-10-19 · local branch `private-rev2`
 
 Project alignment after the upload, no behaviour change on the workspace side.
