@@ -2,6 +2,11 @@
 
 Three artefacts share a name but not a release cadence. This file is the only place that records all three.
 
+## 1.1.12 — 2026-10-19
+
+- `docs/INDEX.md` no longer hardcodes a mutation count. The number changes with the files on disk (15 before the Project `pre-trip.md` sync, 17 after), so a fixed figure was wrong twice. The index now points at `scripts/mutation_test.py` instead.
+- Documentation only; no rule or behaviour change.
+
 ## 1.1.11 — 2026-10-19
 
 - Fixes a wrong number in `docs/INDEX.md` (claimed 19/19 mutation kills; the checker reports 15/15 rule×edition checks). Documentation only, no rule or behaviour change.

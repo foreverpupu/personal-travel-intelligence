@@ -45,7 +45,7 @@ python3 scripts/pack_review.py        # publishable-only bundle for external rev
 
 ## What the numbers mean
 
-- `15/15` rule×edition checks killed by mutation: the checker enforces them, not just mentions them.
+- The mutation rate is not hardcoded here: run `python3 scripts/mutation_test.py` and it prints the rate for the files actually on disk. A rule that survives deletion is not enforced, whatever the parity table says.
 - `ABSENT` in the parity table: the file is not on this disk; it is not a pass and not a failure.
 - A release sheet with hashes: the only proof that what you published is what you tested.
 
