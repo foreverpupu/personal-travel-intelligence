@@ -15,6 +15,7 @@ Canonical schema (defined only in the public repo path `personal-travel-intellig
   lesson: ""
   source_ids: []
   status: proposed
+  provenance: unknown   # trip-explicit | group-confirmed | destination-fit | prior-success-inference | unknown
   reopen_trigger: ""
   updated: ""
 ```

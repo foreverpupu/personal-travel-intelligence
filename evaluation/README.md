@@ -9,3 +9,9 @@ Do **not** use any anecdote already embedded in the Skill rules as an independen
 **Experiment 3 — External usability:** 3a facilitated installation (tester uses a preconfigured environment, value of experience) and 3b self-installation (installation friction). Offer a completed past trip for post-trip tasks; no upcoming trip required. Record where each tester gets stuck and whether any one finishes a meaningful task. Small samples are descriptive, not statistically representative.
 
 See `EXPERIMENT-1.md`, `EXPERIMENT-2.md`, `RUBRIC.md`, `EXPERIMENT-3.md`. No real experimental outcomes are included in this release.
+
+## Rule-level test: preference provenance (rev2)
+
+`REV2-PROTOCOL.md` is a pre-registered, rule-level test: three scenarios, two arms, three runs each, binary composition indicators scored blind. `SCORING-SHEET.md` is the record. `DRYRUN-2026-10-18.md` is a hand walkthrough that found four wording ambiguities and is **not** evidence of model behaviour — it exists so the next person does not repeat it.
+
+Scope discipline: this protocol can show that one rule changed route composition. It cannot support a claim that PTI is better than a well-prompted model; that is Experiment 1.

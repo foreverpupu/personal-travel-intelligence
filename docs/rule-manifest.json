@@ -1,0 +1,150 @@
+{
+  "comment": "Rule markers used by scripts/check_all.py. Patterns are case-insensitive regexes. A rule is OK when any existing target file matches; ABSENT means we do not have that file locally and cannot judge it.",
+  "editions": {
+    "workspace": {
+      "root": "personal-travel-intelligence",
+      "label": "Workspace / Codex edition (local skill)"
+    },
+    "project": {
+      "root": "project-edition",
+      "label": "ChatGPT Project edition (uploaded manually)"
+    }
+  },
+  "rules": [
+    {
+      "id": "R1",
+      "name": "no-invention",
+      "pattern": "Do not invent facts",
+      "targets": {
+        "workspace": [
+          "SKILL.md"
+        ],
+        "project": [
+          "SKILL.md"
+        ]
+      }
+    },
+    {
+      "id": "R2",
+      "name": "locked-bookings",
+      "pattern": "Preserve locked bookings",
+      "targets": {
+        "workspace": [
+          "SKILL.md"
+        ],
+        "project": [
+          "SKILL.md"
+        ]
+      }
+    },
+    {
+      "id": "R3",
+      "name": "no-auto-sync",
+      "pattern": "Never pretend",
+      "targets": {
+        "workspace": [
+          "SKILL.md"
+        ],
+        "project": [
+          "SKILL.md"
+        ]
+      }
+    },
+    {
+      "id": "R4",
+      "name": "qa-pass-gate",
+      "pattern": "before saying QA PASS",
+      "targets": {
+        "workspace": [
+          "SKILL.md"
+        ],
+        "project": [
+          "SKILL.md"
+        ]
+      }
+    },
+    {
+      "id": "R5",
+      "name": "preference-provenance",
+      "pattern": "preference provenance",
+      "targets": {
+        "workspace": [
+          "SKILL.md",
+          "references/pre-trip.md"
+        ],
+        "project": [
+          "SKILL.md",
+          "pre-trip.md"
+        ]
+      }
+    },
+    {
+      "id": "R6",
+      "name": "a4-verification",
+      "pattern": "595\\s*[×x]\\s*842|A4",
+      "targets": {
+        "workspace": [
+          "SKILL.md"
+        ],
+        "project": [
+          "SKILL.md",
+          "publishing-guide.md"
+        ]
+      }
+    },
+    {
+      "id": "R7",
+      "name": "friends-edition-privacy",
+      "pattern": "do not leak|隐私",
+      "targets": {
+        "workspace": [
+          "SKILL.md",
+          "references/publishing-guide.md"
+        ],
+        "project": [
+          "SKILL.md",
+          "publishing-guide.md"
+        ]
+      }
+    },
+    {
+      "id": "R8",
+      "name": "pre-mortem",
+      "pattern": "Pre-mortem",
+      "targets": {
+        "workspace": [
+          "references/pre-trip.md"
+        ],
+        "project": [
+          "pre-trip.md"
+        ]
+      }
+    },
+    {
+      "id": "R9",
+      "name": "reference-class",
+      "pattern": "Reference class",
+      "targets": {
+        "workspace": [
+          "references/pre-trip.md"
+        ],
+        "project": [
+          "pre-trip.md"
+        ]
+      }
+    },
+    {
+      "id": "R10",
+      "name": "provenance-schema",
+      "pattern": "carries exactly one provenance class",
+      "targets": {
+        "workspace": [
+          "references/data-model.md"
+        ],
+        "project": [
+          "data-model.md"
+        ]
+      }
+    }
+  ]
+}

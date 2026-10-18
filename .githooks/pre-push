@@ -1,0 +1,30 @@
+#!/bin/sh
+# Guard against publishing history that predates the privacy redaction.
+# b6e63e5 is the first private commit; anything descending from it must stay local.
+PRIVATE_BASE=b6e63e5
+status=0
+while read -r local_ref local_sha remote_ref remote_sha; do
+  [ "$local_sha" = "0000000000000000000000000000000000000000" ] && continue
+  case "$remote_ref" in
+    refs/heads/main|refs/heads/master) ;;
+    refs/heads/*)
+      echo "push blocked: $remote_ref — only main is publishable (use squash)" >&2
+      status=1; continue ;;
+    refs/tags/v*) ;;
+    refs/tags/*)
+      echo "push blocked: tag $remote_ref — release tags must look like v1.2.3" >&2
+      status=1; continue ;;
+    *)
+      echo "push blocked: $remote_ref" >&2
+      status=1; continue ;;
+  esac
+  # Ref name alone is not enough: private-rev2:main and tags on private commits
+  # both look legitimate by name.
+  sha=$(git rev-parse --verify "$local_sha^{commit}" 2>/dev/null) || {
+    echo "push blocked: $local_sha is not a commit" >&2; status=1; continue; }
+  if git merge-base --is-ancestor "$PRIVATE_BASE" "$sha" 2>/dev/null; then
+    echo "push blocked: $remote_ref carries pre-redaction history (descends from $PRIVATE_BASE)" >&2
+    status=1; continue
+  fi
+done
+exit $status
