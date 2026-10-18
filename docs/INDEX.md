@@ -45,7 +45,7 @@ python3 scripts/pack_review.py        # publishable-only bundle for external rev
 
 ## What the numbers mean
 
-- `19/19` rules killed by mutation: the checker enforces them, not just mentions them.
+- `15/15` rule×edition checks killed by mutation: the checker enforces them, not just mentions them.
 - `ABSENT` in the parity table: the file is not on this disk; it is not a pass and not a failure.
 - A release sheet with hashes: the only proof that what you published is what you tested.
 

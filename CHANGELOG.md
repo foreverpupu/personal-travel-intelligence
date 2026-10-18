@@ -2,6 +2,11 @@
 
 Three artefacts share a name but not a release cadence. This file is the only place that records all three.
 
+## 1.1.11 — 2026-10-19
+
+- Fixes a wrong number in `docs/INDEX.md` (claimed 19/19 mutation kills; the checker reports 15/15 rule×edition checks). Documentation only, no rule or behaviour change.
+- 1.1.10 and earlier remain as published; this patch exists so the public entry page does not overstate the evidence.
+
 ## 1.1.10 — 2026-10-19 · local branch `private-rev2`
 
 Process incident and the fix that came out of it.
