@@ -38,7 +38,8 @@ python3 scripts/release.py --check      # G1, no sheet yet
 git checkout main
 git merge --squash private-rev2
 git commit -m "v<version>: <summary>"
-python3 scripts/release.py              # sheet now records the commit that will be tagged
+python3 scripts/release.py              # exit 0 required; never pipe it through tail/head
+test $? -eq 0 || { echo "release blocked"; exit 1; }
 git tag v<version>
 git push origin main refs/tags/v<version>   # explicit ref; --tags pushes every local tag
 
@@ -69,11 +70,16 @@ git merge main
 
 ```bash
 git checkout main
-git merge --squash private-rev2
-git commit -m "v<version>: <summary>"
+git fetch origin
+test "$(git rev-parse main)" = "$(git rev-parse origin/main)"   # main must match the remote
+tree=$(git rev-parse private-rev2^{tree})
+commit=$(git commit-tree "$tree" -p main -m "v<version>: <summary>")
+git update-ref refs/heads/main "$commit"
 git tag v<version>
 git push origin main refs/tags/v<version>
 ```
+
+Use `commit-tree`, not `merge --squash`. A squash merge replays a diff that `main` already contains after the previous release, so the second release conflicts on files both sides changed. `commit-tree` takes the exact tree from the private branch, gives it one parent, and cannot conflict. Never commit directly on `main`: it is a publishing pointer, not a working branch. (This paragraph exists because the 1.1.10 release hit exactly that conflict.)
 
 `--tags` is forbidden: a tag created on `private-rev2` points at a commit whose ancestors contain the pre-redaction text, and pushing the tag publishes that history. Push the single ref instead.
 

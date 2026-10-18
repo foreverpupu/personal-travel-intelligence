@@ -37,7 +37,7 @@ Record: model, interface, date, temperature/tools, seed.
 
 ## 2. Generate
 
-Use the template in `SCENARIOS.md`. One fresh conversation per run; never let a run see another scenario.
+Instantiate the placeholders in `SCENARIOS.md` from `travel-data/scenarios-concrete.md` (private, git-ignored), then use the template. One fresh conversation per run; never let a run see another scenario.
 
 Save as `runs/<random-id>.md`. Keep the mapping `random-id → (scenario, arm)` in a separate file that the scorer never opens.
 

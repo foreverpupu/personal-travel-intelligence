@@ -2,6 +2,15 @@
 
 Three artefacts share a name but not a release cadence. This file is the only place that records all three.
 
+## 1.1.10 — 2026-10-19 · local branch `private-rev2`
+
+Process incident and the fix that came out of it.
+
+- **Incident:** the 1.1.9 release gate blocked on two destination names, but the push still ran because the command piped `release.py` through `tail`, which swallowed the exit code. The published tree therefore contains two country names in evaluation docs. No personal identifiers, bookings or preferences were published; the names are places, not people.
+- **Decision:** do not rewrite public history — force-pushing to remove a country name costs more than it buys, and the names remain in the 1.1.9 commit regardless of later edits. Recorded here instead of hidden.
+- **Fix:** concrete destinations moved to `travel-data/scenarios-concrete.md` (git-ignored); public `SCENARIOS.md` uses `{WINE_MOUNTAIN_DEST}`-style placeholders. `RUNBOOK.md` substitutes them at run time. The pilot's quotes were genericised.
+- **Process fix:** `RELEASE-PIPELINE.md` now says never to pipe `release.py`, and shows an explicit exit-code check. This file exists because a pipe defeated the gate once.
+
 ## 1.1.9 — 2026-10-19 · local branch `private-rev2`
 
 Evaluation kit and a pilot that changed the kit.
