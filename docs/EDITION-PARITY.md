@@ -22,14 +22,14 @@ R2  locked-bookings          workspace OK   project OK
 R3  no-auto-sync             workspace OK   project OK
 R4  qa-pass-gate             workspace OK   project OK
 R5  preference-provenance    workspace OK   project OK
-R6  a4-verification          workspace OK   project MISSING (SKILL.md; publishing-guide.md not on disk)
-R7  friends-edition-privacy  workspace OK   project MISSING (SKILL.md; publishing-guide.md not on disk)
-R8  pre-mortem               workspace OK   project MISSING (pre-trip.md)
-R9  reference-class          workspace OK   project MISSING (pre-trip.md)
+R6  a4-verification          workspace OK   project ABSENT (publishing-guide.md not on disk)
+R7  friends-edition-privacy  workspace OK   project ABSENT (publishing-guide.md not on disk)
+R8  pre-mortem               workspace OK   project OK (pre-trip.md)
+R9  reference-class          workspace OK   project OK (pre-trip.md)
 R10 provenance-schema        workspace OK   project ABSENT (data-model.md not mirrored)
 ```
 
-Five rules are not fully mirrored. R6/R7 are now labelled MISSING rather than UNVERIFIED: the Project `SKILL.md` provably lacks both sections, so the absence is confirmed even though `publishing-guide.md` could not be read. That remaining doubt is recorded, not used to soften the label.
+R8/R9 now match: the Project `pre-trip.md` was replaced on 2026-10-19 with the v1.1 candidate, confirmed by the owner but not re-downloaded. R6/R7 are `ABSENT`: the rules live in `publishing-guide.md`, which is not on this disk, so absence cannot be judged either way. R10 is `ABSENT` for the same reason.
 
 ## Owner and upload gate
 

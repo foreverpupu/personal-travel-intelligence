@@ -2,6 +2,14 @@
 
 Three artefacts share a name but not a release cadence. This file is the only place that records all three.
 
+## 1.1.8 — 2026-10-19 · local branch `private-rev2`
+
+Project alignment after the upload, no behaviour change on the workspace side.
+
+- Project `pre-trip.md` replaced with the v1.1 candidate (feasibility sanity checks). Owner-confirmed upload; not re-downloaded, so read-back remains unverified and is labelled as such.
+- Parity targets corrected: project R6/R7 now point at `publishing-guide.md` only. They previously required the Project `SKILL.md` to carry A4/privacy rules that belong in the publishing guide, which produced a false MISSING.
+- Parity matrix: R8/R9 OK, R6/R7/R10 ABSENT (file not on disk), replacing the misleading "MISSING".
+
 ## 1.1.7 — 2026-10-19 · local branch `private-rev2`
 
 Fifth external review: the push guard checked ref names, not history.
